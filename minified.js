@@ -15,7 +15,7 @@ let unlockedNow=[];for(let i=0;i<count;i++){if(lockedIndexes.length>0){let rIdx=
 localStorage.setItem('k116_unlocked',JSON.stringify(unlockedProfiles));renderMembers();showRetroAlert("ĐÃ THẮNG!",`Mở khóa thành công:<br><br><span style="color: var(--persica-red); font-size: 1.2rem;">${unlockedNow.join('<br>')}</span>`)}
 function resetUnlocks(){showRetroAlert("XÁC NHẬN","Bạn có chắc muốn KHÓA LẠI toàn bộ hồ sơ lớp không?","confirmReset()")}
 function confirmReset(){unlockedProfiles=[];localStorage.removeItem('k116_unlocked');renderMembers();closeRetroAlert()}
-const totalPhotos=184;const photoFolder='rm';const photoExtension='.webp';function renderRandomPhotos(){const grid=document.getElementById('photos-grid');if(!grid)return;let randomIndexes=new Set();const limit=totalPhotos<6?totalPhotos:6;while(randomIndexes.size<limit){let randomNum=Math.floor(Math.random()*totalPhotos)+1;randomIndexes.add(randomNum)}
+const totalPhotos=215;const photoFolder='rm';const photoExtension='.webp';function renderRandomPhotos(){const grid=document.getElementById('photos-grid');if(!grid)return;let randomIndexes=new Set();const limit=totalPhotos<6?totalPhotos:6;while(randomIndexes.size<limit){let randomNum=Math.floor(Math.random()*totalPhotos)+1;randomIndexes.add(randomNum)}
 let html='';let isOdd=!0;randomIndexes.forEach(index=>{let rotationClass=isOdd?'film':'';html+=`
             <div class="photo-item ${rotationClass}" onclick="openImgModal('${photoFolder}/${index}${photoExtension}')">
                 <img src="${photoFolder}/${index}${photoExtension}" alt="Moment" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border: 2px solid #000;">
